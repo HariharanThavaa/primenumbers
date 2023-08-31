@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.Arrays;
+import java.util.List;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
@@ -28,6 +28,6 @@ public class PrimeNumbersControllersIntegrationTest {
         ResponseEntity<PrimeNumbersResponse> primeNumbers = controller.getPrimeNumbers(initial, "application/json");
 
         // Then
-        then(primeNumbers.getBody().getPrimes()).isEqualTo(Arrays.asList(2, 3, 5, 7));
+        then(primeNumbers.getBody().getPrimes()).isEqualTo(List.of(2, 3, 5, 7));
     }
 }
